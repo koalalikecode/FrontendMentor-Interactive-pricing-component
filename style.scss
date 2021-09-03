@@ -1,0 +1,279 @@
+$Soft-Cyan: hsl(174, 77%, 80%);
+$Strong-Cyan: hsl(174, 86%, 45%);
+$Light-Grayish-Red: hsl(14, 92%, 95%);
+$Light-Red: hsl(15, 100%, 70%);
+$Pale-Blue: hsl(226, 100%, 87%);
+$White: hsl(0, 0%, 100%);
+$Very-Pale-Blue: hsl(230, 100%, 99%);
+$Light-Grayish-Blue-1: hsl(224, 65%, 95%);
+$Light-Grayish-Blue-2: hsl(223, 50%, 87%);
+$Grayish-Blue: hsl(225, 20%, 60%);
+$Dark-Desaturated-Blue: hsl(227, 35%, 25%);
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 4px;
+  color: $Grayish-Blue;
+}
+body {
+  font-family: "Manrope", sans-serif;
+  background-image: url(images/bg-pattern.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 100vh;
+  background-color: $Very-Pale-Blue;
+  padding-top: 0.1px;
+}
+p {
+  font-size: 15px;
+}
+
+.name {
+  background-image: url(images/pattern-circles.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 40rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 15rem 0;
+  h1 {
+    font-size: 7rem;
+    font-weight: 800;
+    color: $Dark-Desaturated-Blue;
+  }
+  p {
+    margin-top: 2rem;
+  }
+}
+
+.container {
+  max-width: 130rem;
+  background-color: $White;
+  margin: 0 auto;
+  border-radius: 2.5rem;
+  box-shadow: 0px 10px 20px 0 $Light-Grayish-Blue-2;
+  .regulation {
+    padding: 8rem 12rem 6rem 12rem;
+    border-bottom: 1px solid $Light-Grayish-Blue-1;
+    .pageview {
+      display: flex;
+      align-items: center;
+      h2 {
+        font-size: 3.5rem;
+        font-weight: 600;
+        letter-spacing: 2px;
+        flex-grow: 1;
+      }
+      p {
+        font-size: 4rem;
+        display: flex;
+        align-items: center;
+        white-space: pre;
+        span {
+          font-size: 10rem;
+          font-weight: 800;
+          color: $Dark-Desaturated-Blue;
+        }
+      }
+    }
+    .slide-input {
+      margin: 8rem 0;
+      input {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 100%;
+        background: $Soft-Cyan;
+        height: 2rem;
+        border-radius: 4rem;
+      }
+      input::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 10rem;
+        height: 10rem;
+        border-radius: 50%;
+        background: $Strong-Cyan url(images/icon-slider.svg) center no-repeat;
+        cursor: pointer;
+        box-shadow: 0px 15px 15px 0px $Soft-Cyan;
+        &:active {
+          cursor: grab;
+        }
+      }
+    }
+    .billing {
+      display: flex;
+      align-items: center;
+      justify-content: end;
+      padding: 4rem 8rem;
+
+      .billing-method {
+        display: inline-block;
+        font-size: 3.2rem;
+        margin-right: 2rem;
+      }
+      .monthly {
+        display: flex;
+        align-items: center;
+        .billing-method {
+          margin-right: 4rem;
+        }
+        .switch {
+          position: relative;
+          display: inline-block;
+          height: 6rem;
+          width: 11rem;
+          input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+          }
+          .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: $Light-Grayish-Blue-2;
+            -webkit-transition: 0.4s;
+            transition: 0.4s;
+            border-radius: 4rem;
+            &:hover {
+              background-color: $Soft-Cyan;
+            }
+            &:before {
+              position: absolute;
+              content: "";
+              height: 4rem;
+              width: 4rem;
+              left: 1rem;
+              bottom: 1rem;
+              border-radius: 50%;
+              background-color: white;
+              -webkit-transition: 0.4s;
+              transition: 0.4s;
+            }
+          }
+          input:checked {
+            + .slider {
+              background-color: $Strong-Cyan;
+              &::before {
+                -webkit-transform: translateX(5rem);
+                -ms-transform: translateX(5rem);
+                transform: translateX(5rem);
+              }
+            }
+          }
+        }
+      }
+      .yearly {
+        margin-left: 4rem;
+        display: flex;
+        align-items: center;
+        span {
+          font-size: 2.5rem;
+          background-color: $Light-Grayish-Red;
+          color: $Light-Red;
+          font-weight: 800;
+          padding: 2px 1.5rem;
+          border-radius: 2rem;
+        }
+        .mobile-discount {
+          display: none;
+        }
+      }
+    }
+  }
+  .decision {
+    padding: 7rem 12rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .preference {
+      .preference-item {
+        display: flex;
+        align-items: center;
+        &:not(:last-child) {
+          margin-bottom: 2.5rem;
+        }
+        p {
+          font-size: 3.2rem;
+          margin-left: 4rem;
+        }
+      }
+    }
+    .trial-button {
+      button {
+        font-size: 3.2rem;
+        font-weight: 600;
+        padding: 3rem 10rem;
+        border: none;
+        border-radius: 8rem;
+        background-color: $Dark-Desaturated-Blue;
+        color: $Pale-Blue;
+        &:hover {
+          color: $White;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  body {
+    text-align: center;
+    padding: 0.1px 6rem;
+  }
+  .name {
+    margin-bottom: 8rem;
+    h1 {
+      font-size: 5.5rem;
+    }
+    p {
+      margin: 2rem 15rem 0;
+      line-height: 1.5;
+    }
+  }
+  .container {
+    .regulation {
+      padding: 8rem 4rem 6rem;
+      .pageview {
+        position: relative;
+        p {
+          position: absolute;
+          top: 25rem;
+          width: 100%;
+          justify-content: center;
+        }
+      }
+      .slide-input {
+        margin: 9rem 2rem 28rem;
+      }
+      .billing {
+        padding: 4rem 0;
+        .yearly {
+          .destop-discount {
+            display: none;
+          }
+          .mobile-discount {
+            display: block;
+          }
+        }
+      }
+    }
+    .decision {
+      display: block;
+      .preference {
+        margin-bottom: 7rem;
+        .preference-item {
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
