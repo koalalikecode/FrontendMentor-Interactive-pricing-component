@@ -215,12 +215,10 @@ p {
         border: none;
         border-radius: 8rem;
         background-color: $Dark-Desaturated-Blue;
-        a {
-          text-decoration: none;
-          color: $Pale-Blue;
-          &:hover {
-            color: $White;
-          }
+        text-decoration: none;
+        color: $Pale-Blue;
+        &:hover {
+          color: $White;   
         }
       }
     }
