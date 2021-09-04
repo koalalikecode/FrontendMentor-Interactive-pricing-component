@@ -87,7 +87,6 @@ p {
         -webkit-appearance: none;
         appearance: none;
         width: 100%;
-        background: $Soft-Cyan;
         height: 2rem;
         border-radius: 4rem;
       }
@@ -108,7 +107,7 @@ p {
     .billing {
       display: flex;
       align-items: center;
-      justify-content: end;
+      justify-content: flex-end;
       padding: 4rem 8rem;
 
       .billing-method {
@@ -228,6 +227,10 @@ p {
   body {
     text-align: center;
     padding: 0.1px 6rem;
+    background-size: auto;
+    footer{
+      display: none;
+    }
   }
   .name {
     margin-bottom: 8rem;
@@ -256,6 +259,13 @@ p {
       }
       .billing {
         padding: 4rem 0;
+        .monthly{
+          .switch{
+            .slider:hover{
+              background-color: $Light-Grayish-Blue-2;
+            }
+          }
+        }
         .yearly {
           .destop-discount {
             display: none;
